@@ -1,1 +1,17 @@
 // Mixins
+@use './functions' as f;
+@use 'sass:map';
+@use './variables' as v;
+
+// Breakpoints
+
+$breakpoints-down: (
+  'small': f.em(v.$small),
+  'medium': f.em(v.$medium),
+);
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map.get($breakpoints-down, $size)) {
+    @content;
+  }
+}
