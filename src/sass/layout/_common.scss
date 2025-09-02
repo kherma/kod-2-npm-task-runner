@@ -1,0 +1,6 @@
+@use '../abstracts' as a;
+
+.container {
+  max-width: a.rem(a.$container-width);
+  margin-inline: auto;
+}
