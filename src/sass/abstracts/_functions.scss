@@ -1,9 +1,10 @@
 // Functions
+@use './variables' as v;
 @use 'sass:math';
 
 @function rem($px) {
   @if (math.is-unitless($px)) {
-    @return math.div($px, 16) + rem;
+    @return math.div($px, 16) * 1rem;
   } @else {
     @error 'Don\'t use units when using rem() functions, only numbers allowed';
   }
@@ -11,8 +12,48 @@
 
 @function em($px) {
   @if () {
-    @return math.div($px, 16) + em;
+    @return math.div($px, 16) * 1em;
   } @else {
     @error 'Don\'t use units when using em() functions, only numbers allowed';
   }
+}
+
+// Fluid typography
+
+$default-min-bp: 320;
+$default-max-bp: 1440;
+
+@function round($number, $decimals: 0) {
+  $n: 1;
+  @if $decimals > 0 {
+    @for $i from 1 through $decimals {
+      $n: $n * 10;
+    }
+  }
+
+  @return math.div(math.round($number * $n), $n);
+}
+
+@function fluid(
+  $min-font-size,
+  $max-font-size,
+  $min-breakpoint: v.$fluid-min,
+  $max-breakpoint: v.$fluid-max,
+  $unit: vw
+) {
+  $slope: math.div(
+    $max-font-size - $min-font-size,
+    $max-breakpoint - $min-breakpoint
+  );
+
+  $slope-to-unit: round($slope * 100, 4);
+  $intercept: round(rem($min-font-size - $slope * $min-breakpoint), 3);
+  $min-size-rem: round(rem($min-font-size), 2);
+  $max-size-rem: round(rem($max-font-size), 2);
+
+  @return clamp(
+    #{$min-size-rem},
+    #{$slope-to-unit}#{$unit} + #{$intercept},
+    #{$max-size-rem}
+  );
 }
