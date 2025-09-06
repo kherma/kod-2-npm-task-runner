@@ -1,0 +1,30 @@
+@use '../abstracts' as a;
+
+.btn {
+  color: a.$white;
+  text-transform: uppercase;
+  font-family: a.$font-primary;
+  border: none;
+  border-radius: a.rem(8);
+  padding: a.rem(16) a.rem(32);
+  font-weight: 900;
+  margin-top: a.rem(32);
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 a.rem(5) a.rem(8) a.rem(2) rgba(255, 255, 255, 0.3);
+  }
+
+  &:active {
+    transform: scale(0.97);
+    box-shadow: 0 a.rem(1) a.rem(1) a.rem(1) rgba(255, 255, 255, 0.3);
+  }
+
+  &-yellow {
+    background-color: a.$yellow-100;
+  }
+}

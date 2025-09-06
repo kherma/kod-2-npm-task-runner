@@ -1,1 +1,16 @@
 // Typography
+
+@use '../abstracts' as a;
+
+$colors: (
+  'red': a.$red-100,
+  'green': a.$green-100,
+  'yellow': a.$yellow-100,
+  'blue': a.$blue-100,
+);
+
+@each $name, $color in $colors {
+  .underline-#{$name} {
+    @include a.underline($color);
+  }
+}

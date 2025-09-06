@@ -6,12 +6,29 @@
 // Breakpoints
 
 $breakpoints-down: (
-  'small': f.em(v.$small),
-  'medium': f.em(v.$medium),
+  'xs': f.em(v.$bp-xs),
+  'xl': f.em(v.$bp-xl),
 );
 
 @mixin breakpoint-down($size) {
   @media (max-width: map.get($breakpoints-down, $size)) {
     @content;
+  }
+}
+
+// Underline
+
+@mixin underline($bg-color) {
+  position: relative;
+  display: inline-block;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: f.em(1.6);
+    z-index: 9999;
+    background-color: $bg-color;
   }
 }
