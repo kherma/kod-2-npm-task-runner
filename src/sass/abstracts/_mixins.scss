@@ -20,7 +20,7 @@ $breakpoints-down: (
 
 @mixin underline($bg-color) {
   position: relative;
-
+  display: inline-block;
   &::after {
     content: '';
     position: absolute;
