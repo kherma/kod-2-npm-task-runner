@@ -6,8 +6,8 @@
 // Breakpoints
 
 $breakpoints-down: (
-  'small': f.em(v.$small),
-  'medium': f.em(v.$medium),
+  'xs': f.em(v.$bp-xs),
+  'xl': f.em(v.$bp-xl),
 );
 
 @mixin breakpoint-down($size) {

@@ -37,8 +37,8 @@ $default-max-bp: 1440;
 @function fluid(
   $min-font-size,
   $max-font-size,
-  $min-breakpoint: v.$fluid-min,
-  $max-breakpoint: v.$fluid-max,
+  $min-breakpoint: v.$bp-xs,
+  $max-breakpoint: v.$bp-xl,
   $unit: vw
 ) {
   $slope: math.div(

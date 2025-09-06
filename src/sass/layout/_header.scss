@@ -5,6 +5,10 @@
   width: 100vw;
   padding: 3rem;
 
+  @include a.breakpoint-down(xs) {
+    padding: 1rem;
+  }
+
   background-image: url('../../assets/images/bg-placeholder.png');
   background-repeat: no-repeat;
   background-position: center;
