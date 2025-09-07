@@ -8,6 +8,11 @@
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
+
+    @include a.breakpoint-down(md) {
+      flex-flow: column nowrap;
+      gap: a.rem(32);
+    }
   }
 
   &__text {
