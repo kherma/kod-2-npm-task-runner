@@ -14,3 +14,18 @@ $colors: (
     @include a.underline($color);
   }
 }
+
+.section-title {
+  font-family: a.$font-primary;
+  font-size: a.rem(42);
+  text-transform: uppercase;
+  text-align: center;
+}
+.section-subtitle {
+  font-size: a.rem(20);
+  font-style: italic;
+  font-weight: 300;
+  text-align: center;
+  color: lighten(a.$dark-100, 30%);
+  margin-bottom: a.rem(96);
+}

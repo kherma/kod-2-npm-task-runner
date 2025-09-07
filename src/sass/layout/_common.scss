@@ -4,3 +4,7 @@
   max-width: a.rem(a.$container-width);
   margin-inline: auto;
 }
+
+section {
+  padding: a.rem(120) a.rem(16);
+}

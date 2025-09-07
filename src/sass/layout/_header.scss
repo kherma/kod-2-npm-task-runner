@@ -2,7 +2,6 @@
 
 .header {
   min-height: 100svh;
-  width: 100vw;
   padding: 0 3rem;
 
   @include a.breakpoint-down(xs) {
