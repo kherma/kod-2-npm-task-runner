@@ -19,16 +19,5 @@ $breakpoints-down: (
 // Underline
 
 @mixin underline($bg-color) {
-  position: relative;
-  display: inline-block;
-  &::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: f.em(1.6);
-    z-index: 9999;
-    background-color: $bg-color;
-  }
+  border-bottom: f.em(1.6) solid $bg-color;
 }
