@@ -2,10 +2,19 @@
 
 .our-work {
   background-color: a.$grey-100;
+
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: a.rem(24);
+
+    @include a.breakpoint-down(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include a.breakpoint-down(smd) {
+      grid-template-columns: 1fr;
+    }
 
     &-item {
       text-align: center;
@@ -14,7 +23,8 @@
     }
 
     &-img {
-      object-fit: contain;
+      object-fit: cover;
+      width: 100%;
     }
 
     &-description {
