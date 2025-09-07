@@ -6,6 +6,12 @@
     grid-template-columns: repeat(3, 1fr);
     gap: a.rem(32);
 
+    @include a.breakpoint-down(md) {
+      grid-template-columns: 1fr;
+      padding: 0 a.rem(48);
+      gap: a.rem(96);
+    }
+
     &-item {
       text-align: center;
       display: flex;
