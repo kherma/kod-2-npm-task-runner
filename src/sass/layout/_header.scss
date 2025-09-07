@@ -1,12 +1,12 @@
 @use '../abstracts' as a;
 
 .header {
-  height: 100svh;
+  min-height: 100svh;
   width: 100vw;
-  padding: 3rem;
+  padding: 0 3rem;
 
   @include a.breakpoint-down(xs) {
-    padding: 1rem;
+    padding: 0 1rem;
   }
 
   background-image: url('../../assets/images/bg-placeholder.png');
@@ -21,7 +21,15 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  gap: a.rem(10);
+
+  &__box {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: a.rem(10);
+  }
 
   &__title {
     font-family: a.$font-primary;
