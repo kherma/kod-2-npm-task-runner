@@ -1,0 +1,44 @@
+@use '../abstracts' as a;
+
+.our-work {
+  background-color: a.$grey-100;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: a.rem(24);
+
+    @include a.breakpoint-down(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include a.breakpoint-down(smd) {
+      grid-template-columns: 1fr;
+    }
+
+    &-item {
+      text-align: center;
+      background-color: a.$white;
+      box-shadow: 0 0.15rem a.rem(8) rgba(0, 0, 0, 0.1);
+    }
+
+    &-img {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &-description {
+      padding: a.rem(24);
+    }
+
+    &-heading {
+      text-transform: capitalize;
+      font-size: a.rem(20);
+      font-family: a.$font-primary;
+    }
+
+    &-text {
+      font-style: italic;
+    }
+  }
+}
